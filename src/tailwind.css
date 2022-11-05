@@ -1,0 +1,82 @@
+body {
+  @apply flex items-center	justify-center;
+  background-color: #a9cbee;
+  padding-top: 300px;
+  
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  @apply flex flex-col	items-center	justify-center	;
+}
+.box-minmax {
+  margin-top: 30px;
+  @apply mt-[30px] flex justify-between	text-[20px];
+
+  width: 608px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #2968bb;
+}
+.box-minmax span:first-child {
+  margin-left: 10px;
+}
+
+.rs-range {
+  margin-top: 29px;
+  width: 600px;
+  -webkit-appearance: none;
+}
+input[type="range"]{
+  @apply bg-transparent	;
+}
+.rs-range::-webkit-slider-thumb {
+  @apply animate-bounce border-none h-[42px] w-[42px] bg-transparent bg-[-0px_0px] bg-cover  appearance-none bg-[url("https://storage.googleapis.com/pw-stuff/thumbs-sprite.png")] -mt-[15px];
+  transform: scale(1.9) rotateZ(var(--thumb-rotate, 10deg));
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  @apply bg-[100%_0px];
+  transform: scale(2) rotateZ(var(--thumb-rotate, 10deg));
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  @apply bg-[100%_0px];
+  transform: scale(1.9) rotateZ(var(--thumb-rotate, 10deg));
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  @apply w-[100%] h-[20px] bg-slate-200 rounded-full shadow-[2px_2px_4px_rgba(0,0,0,0.4)] cursor-pointer appearance-none;
+}
+.rs-range::-moz-focus-outer {
+  border: 0;
+}
+.rs-label {
+  position: relative;
+  transform-origin: center center;
+  display: block;
+  width: 98px;
+  height: 98px;
+  background: transparent;
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 22px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  margin-top: 20px;
+  margin-left: -38px;
+  left: attr(value);
+  color: #2968bb;
+  font-size: 36px;
+  background-color: white;
+}
+.rs-label::after {
+  content: "kg";
+  display: block;
+  font-size: 20px;
+  letter-spacing: 0.07em;
+  margin-top: -2px;
+}

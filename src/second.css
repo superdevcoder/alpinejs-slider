@@ -1,0 +1,40 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+div {
+  padding-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a9cbee;
+}
+input[type="range"] {
+  @apply appearance-none bg-transparent outline-none;
+}
+input[type="range"]:focus,
+input[type="range"]:active,
+input[type="range"]::-moz-focus-inner,
+input[type="range"]::-moz-focus-outer {
+  @apply border-none outline-none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply animate-bounce border-none h-[50px] w-[50px] bg-transparent bg-[0px_0px] bg-cover  appearance-none bg-[url("https://storage.googleapis.com/pw-stuff/thumbs-sprite.png")] -mt-[15px];
+  transform: scale(1.9) rotateZ(var(--thumb-rotate, 10deg));
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  @apply bg-[100%_0px];
+  transform: scale(2) rotateZ(var(--thumb-rotate, 10deg));
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  @apply bg-[100%_0px];
+  transform: scale(1.9) rotateZ(var(--thumb-rotate, 10deg));
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  @apply w-[100%] h-[20px] bg-slate-200 rounded-full shadow-[2px_2px_4px_rgba(0,0,0,0.4)] cursor-pointer appearance-none;
+}
+label {
+  @apply bg-[#eee] rounded-full shadow-[2px_2px_4px_rgba(0,0,0,0.4)] p-[14px] mt-[4px] text-[20px] w-[25px] text-center font-bold text-[#2968bb];
+}

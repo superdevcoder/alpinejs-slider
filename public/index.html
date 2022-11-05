@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>slider</title>
+    <link rel="stylesheet" href="build/css/tailwind.css" />
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+  
+      <div class="range-slider" x-data="{value:'0'}">
+        <span id="rs-bullet" class="rs-label" style="left: 10px;">0</span>
+        <input x-on:input="value = showSliderValue()" id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="200">
+        
+      </div>
+      
+      <div class="box-minmax">
+        <span>0</span><B style="color: black;">Please select penguin's weight!!😂🤣🤣</B><span>200</span>
+      </div>
+      
+    </div>
+    <script>
+      var rangeSlider = document.getElementById("rs-range-line");
+var rangeBullet = document.getElementById("rs-bullet");
+
+rangeSlider.addEventListener("input", showSliderValue, false);
+
+function showSliderValue() {
+  rangeSlider.style.setProperty('--thumb-rotate', `${rangeSlider.value * 7.2}deg`);
+    rangeBullet.innerHTML = rangeSlider.value;
+    var bulletPosition = (rangeSlider.value /rangeSlider.max);
+    rangeBullet.style.left = (bulletPosition * 558+10) + "px";
+}
+    </script>
+  </body>
+</html>
