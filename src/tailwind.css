@@ -1,9 +1,11 @@
+
 body {
   @apply flex items-center	justify-center;
   background-color: #a9cbee;
   padding-top: 300px;
   
 }
+
 * {
   margin: 0;
   padding: 0;
